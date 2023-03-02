@@ -1,0 +1,1 @@
+CUDA_VISIBLE_DEVICES=0 python test.py  --test_epoch 60 #--pretrain='log/2022_07_14_12_00'

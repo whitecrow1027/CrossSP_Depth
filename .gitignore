@@ -1,0 +1,13 @@
+__pycache__/
+.vscode/
+log/
+logs/
+result/
+testimg/
+.git/
+data/
+
+*.png
+*.txt
+*.lst
+*.ckpt

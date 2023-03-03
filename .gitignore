@@ -5,9 +5,7 @@ logs/
 result/
 testimg/
 .git/
-data/
 
 *.png
-*.txt
 *.lst
 *.ckpt

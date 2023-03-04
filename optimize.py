@@ -84,7 +84,7 @@ def train_epoch(netDisp_encode_RGB,netDisp_encode_IR,netDisp_decode,netRec_RGB, 
         # cross spectral reconstruction
         rec_RGB_R = netRec_RGB(F_rgb_R)
         rec_IR_L = netRec_IR(F_ir_L)
-        loss_rec = rec_loss(rec_RGB_R,RGB_R_msc) + rec_loss(rec_IR_L,IR_L_msc)
+        loss_rec = (rec_loss(rec_RGB_R,RGB_R_msc) + rec_loss(rec_IR_L,IR_L_msc))*0.5
 
         IR_R_msc = warp(IR_L_msc,disps_R[3],mode='right')
         RGB_L_msc = warp(RGB_R_msc,disps_L[3],mode='left')
@@ -101,7 +101,7 @@ def train_epoch(netDisp_encode_RGB,netDisp_encode_IR,netDisp_decode,netRec_RGB, 
         disps_R_rec = netDisp_decode(F_ir_R)
         loss_warp_consis = disp_consistency_loss(disps_L,disps_L_rec)+disp_consistency_loss(disps_R,disps_R_rec)
 
-        loss_msc = loss_F_ir  + 0.1*loss_rec \
+        loss_msc = loss_F_ir  + loss_rec \
                 + args.lambda_lr_consistency*loss_lr \
                 + args.lambda_warp_consistency*loss_warp_consis
         

@@ -76,7 +76,6 @@ if __name__ == "__main__":
 
     
     val_dataset = CreatDatasets_msc(imgsize=args.imagesize,msc_list=args.msclist,rootpath=args.mscroot,mode='test')
-    #val_dataset = CreatDatasets_Kitti_msc(imgsize=args.imagesize,msc_list=args.msclist,mode='test')
     val_dataloader = DataLoader(dataset=val_dataset,
                                 batch_size=args.batch_size,
                                 num_workers=args.n_threads,

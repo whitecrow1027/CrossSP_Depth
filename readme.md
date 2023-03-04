@@ -19,6 +19,6 @@ Cross-Spectrum Unsupervised Depth Estimation by Visible-light and Thermal Camera
 
 2. Edit train.sh to add your dataset path.
 
-    `CUDA_VISIBLE_DEVICES=0 python train.py --mscroot yourpath`
+    `CUDA_VISIBLE_DEVICES=0 python train.py --mscroot "yourpath"`
 
     then, run train.sh.
